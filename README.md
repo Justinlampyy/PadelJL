@@ -7,6 +7,8 @@ Een simpele padel-scoreteller voor Android — op je telefoon en op je Wear OS-h
 - **Historie** — eindstanden en spelersnamen van eerdere wedstrijden.
 - Volledige game/set/tiebreak-logica volgens de officiële padelregels (incl. golden point en tiebreak-serveerrotatie).
 
+Er is ook een **experimentele, losstaande Garmin-versie** (Connect IQ) — zie [`garmin/README.md`](garmin/README.md). Die is nog niet gecompileerd/getest, alleen de scorelogica is 1-op-1 overgenomen uit de al bewezen Android-versie.
+
 ## 📲 Installeren op je Android-telefoon
 
 De app staat niet in de Play Store — je installeert 'm rechtstreeks via een APK-bestand ("sideloaden"). Dat is veilig zolang je het bestand van deze repo haalt.

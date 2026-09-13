@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="3">
+    <iq:application
+        id="e456fc20-519a-44dc-a570-d09149580eaf"
+        type="watch-app"
+        name="@Strings.AppName"
+        entry="PadelApp"
+        launcherIcon="@Drawables.LauncherIcon"
+        minSdkVersion="3.2.0"
+        version="1.0.0">
+
+        <!--
+            Startset met veelvoorkomende, brede-compatibiliteit-toestellen (knoppen + touch).
+            Voeg hier gerust je eigen horlogemodel aan toe via VS Code's
+            "Monkey C: Edit Products" (Ctrl+Shift+P), zeker als de build faalt
+            op een "unknown product id" voor jouw specifieke model.
+        -->
+        <iq:products>
+            <iq:product id="fenix7"/>
+            <iq:product id="fenix7s"/>
+            <iq:product id="fenix7x"/>
+            <iq:product id="fenix6"/>
+            <iq:product id="fenix6s"/>
+            <iq:product id="venu2"/>
+            <iq:product id="venu2s"/>
+            <iq:product id="venu3"/>
+            <iq:product id="venu3s"/>
+            <iq:product id="vivoactive4"/>
+            <iq:product id="vivoactive4s"/>
+            <iq:product id="fr255"/>
+            <iq:product id="fr265"/>
+            <iq:product id="fr265s"/>
+            <iq:product id="fr955"/>
+            <iq:product id="fr965"/>
+            <iq:product id="epix2"/>
+            <iq:product id="instinct2"/>
+        </iq:products>
+
+        <iq:permissions/>
+
+        <iq:languages>
+            <iq:language>eng</iq:language>
+            <iq:language>dut</iq:language>
+        </iq:languages>
+    </iq:application>
+</iq:manifest>
