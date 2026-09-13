@@ -7,7 +7,7 @@ Een simpele padel-scoreteller voor Android — op je telefoon en op je Wear OS-h
 - **Historie** — eindstanden en spelersnamen van eerdere wedstrijden.
 - Volledige game/set/tiebreak-logica volgens de officiële padelregels (incl. golden point en tiebreak-serveerrotatie).
 
-Er is ook een **experimentele, losstaande Garmin-versie** (Connect IQ) — zie [`garmin/README.md`](garmin/README.md). Die is nog niet gecompileerd/getest, alleen de scorelogica is 1-op-1 overgenomen uit de al bewezen Android-versie.
+Er is ook een **experimentele, losstaande Garmin-versie** (Connect IQ) — zie de [Garmin-sectie hieronder](#-garmin-horloge-experimenteel) en [`garmin/README.md`](garmin/README.md) voor de volledige details. Die is nog niet gecompileerd/getest, alleen de scorelogica is 1-op-1 overgenomen uit de al bewezen Android-versie.
 
 ## 📲 Installeren op je Android-telefoon
 
@@ -35,6 +35,26 @@ Wear OS heeft geen simpele "tik om te installeren"-optie voor bestanden zoals ee
    ```
 
 Zorg dat je telefoon en horloge al gekoppeld zijn via de Wear OS-app, zodat de twee apps met elkaar kunnen synchroniseren.
+
+## ⌚ Garmin-horloge (experimenteel)
+
+⚠️ Dit is **nooit gecompileerd of getest** — er is geen Connect IQ SDK of Garmin-horloge beschikbaar geweest om dat te doen. De scorelogica is wel 1-op-1 overgenomen uit de al bewezen Android-versie. Zie [`garmin/README.md`](garmin/README.md) voor alle details, achtergrond en bekende beperkingen. Hieronder de korte versie:
+
+1. Installeer de gratis **[Connect IQ SDK Manager](https://developer.garmin.com/connect-iq/sdk/)** (Windows/macOS/Linux, geen developer-account nodig) en laat 'm de SDK + device-bibliotheken downloaden.
+2. Maak eenmalig een developer-key aan:
+   ```bash
+   openssl genrsa -out developer_key.pem 4096
+   openssl pkcs8 -topk8 -inform PEM -outform DER -in developer_key.pem -out developer_key.der -nocrypt
+   ```
+3. Compileer vanuit de `garmin/`-map (vervang `fenix7` door jouw model):
+   ```bash
+   monkeyc -f monkey.jungle -o bin/PadelJL.prg -y developer_key.der -d fenix7
+   ```
+   Krijg je een "unknown product id"-fout? Voeg je horlogemodel toe aan `garmin/manifest.xml` (makkelijkst via "Monkey C: Edit Products" in VS Code met de Monkey C-extensie).
+4. Test eventueel eerst zonder horloge in de simulator: `connectiq` starten, dan `monkeydo bin/PadelJL.prg fenix7`.
+5. **Op het horloge zetten**: sluit het horloge via USB aan, kopieer `bin/PadelJL.prg` naar de map `GARMIN/APPS/` op de horloge-schijf, en koppel los. De app verschijnt in het app-menu.
+
+Bediening: **UP** = punt voor WIJ, **DOWN** = punt voor ZIJ, **MENU** (lang indrukken) = ongedaan maken/stoppen, **BACK** = vraagt om te stoppen. Werkt zowel met fysieke knoppen als met tikken/vegen op touchscreen-modellen.
 
 ## 🛠️ Zelf bouwen (voor developers)
 
