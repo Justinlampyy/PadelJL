@@ -1,4 +1,4 @@
-using Toybox.Lang;
+import Toybox.Lang;
 
 // Direct port of mobile/src/main/java/com/example/padeljl/PhoneMatchEngine.kt.
 // Keep this file in sync with that one if the rules ever change there -

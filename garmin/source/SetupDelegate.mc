@@ -1,3 +1,4 @@
+import Toybox.Lang;
 using Toybox.WatchUi as Ui;
 
 class SetupDelegate extends Ui.BehaviorDelegate {

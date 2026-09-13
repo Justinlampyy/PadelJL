@@ -1,4 +1,4 @@
-using Toybox.Lang;
+import Toybox.Lang;
 
 // Shared enum-like constants for the match engine.
 module Const {

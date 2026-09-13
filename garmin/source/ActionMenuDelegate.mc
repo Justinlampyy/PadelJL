@@ -1,3 +1,4 @@
+import Toybox.Lang;
 using Toybox.WatchUi as Ui;
 
 // Generic Menu2 delegate that forwards the chosen item's id back to

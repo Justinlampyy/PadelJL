@@ -1,3 +1,4 @@
+import Toybox.Lang;
 using Toybox.Application as App;
 using Toybox.WatchUi as Ui;
 
@@ -13,10 +14,10 @@ class PadelApp extends App.AppBase {
     function onStop(state as Dictionary?) as Void {
     }
 
-    function getInitialView() as Array<Ui.Views or Ui.InputDelegates>? {
+    function getInitialView() as [Ui.Views] or [Ui.Views, Ui.InputDelegates] {
         var match = new MatchState();
         var view = new SetupView(match);
         var delegate = new SetupDelegate(match, view);
-        return [view, delegate] as Array<Ui.Views or Ui.InputDelegates>;
+        return [view, delegate] as [Ui.Views, Ui.InputDelegates];
     }
 }

@@ -1,4 +1,4 @@
-using Toybox.Lang;
+import Toybox.Lang;
 
 // Mirrors mobile/src/main/java/com/example/padeljl/PhoneMatchEngine.kt's MatchState
 // so the exact same, already-tested rules apply here.
