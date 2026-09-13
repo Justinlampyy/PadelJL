@@ -43,3 +43,7 @@ cd PadelJL
 ```
 
 De APK's staan daarna in `mobile/build/outputs/apk/debug/` en `wear/build/outputs/apk/debug/`.
+
+## 📄 Licentie
+
+MIT © 2026 Justinlampy — zie [LICENSE](LICENSE).
